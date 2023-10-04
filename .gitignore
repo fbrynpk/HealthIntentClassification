@@ -1,5 +1,6 @@
-.vscode
-__pycache__
-data
-mic_records
-models
+.vscode/
+__pycache__/
+data/
+mic_records/
+models/
+.DS_Store
