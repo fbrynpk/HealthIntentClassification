@@ -110,4 +110,3 @@ class GreedyCTCDecoder(nn.Module):
 
 decoder = GreedyCTCDecoder(bundle.get_labels(), blank=0)
 transcript = decoder(emission[0])
-print(transcript)
