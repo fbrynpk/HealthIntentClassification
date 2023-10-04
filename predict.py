@@ -1,5 +1,8 @@
 import torch
 import transformers
+import re
+import nltk
+from nltk import WordNetLemmatizer
 import speech2text
 
 from torch import nn
@@ -34,8 +37,8 @@ def predict(model, text):
     text_dict = tokenizer(
         text, padding="max_length", max_length=20, truncation=True, return_tensors="pt"
     )
-    use_cuda = torch.cuda.is_available()
-    device = torch.device("cuda" if use_cuda else "cpu")
+    use_mps = torch.backends.mps.is_available()
+    device = torch.device("mps" if use_mps else "cpu")
     model = model.to(device)
     mask = text_dict["attention_mask"].to(device)
     input_id = text_dict["input_ids"].squeeze(1).to(device)
@@ -50,7 +53,9 @@ def predict(model, text):
 model = BertClassifier()
 model.load_state_dict(torch.load("./models/FirstAidClassifier.pth"))
 
-prediction = predict(model, text=speech2text.transcript)
+processed_transcript = re.sub(r"\W", " ", speech2text.transcript.lower())
+
+prediction = predict(model, text=processed_transcript)
 print(
-    f"You might be experiencing symptoms for {labels[prediction]}, please seek some medical help!"
+    f"Did you say {processed_transcript}? You might be experiencing symptoms for {labels[prediction]}, please seek some medical help!"
 )
