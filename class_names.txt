@@ -1,25 +1,25 @@
 Blurry vision
-Infected wound
-Stomach ache
-Knee pain
-Shoulder pain
-Muscle pain
-Acne
-Head ache
-Foot ache
-Feeling dizzy
-Joint pain
-Injury from sports
-Neck pain
-Heart hurts
-Emotional pain
-Skin issue
-Open wound
-Hair falling out
 Cough
-Ear ache
-Body feels weak
-Internal pain
 Feeling cold
+Knee pain
+Internal pain
+Neck pain
+Hair falling out
+Body feels weak
+Ear ache
+Stomach ache
+Foot ache
+Injury from sports
+Feeling dizzy
 Back pain
+Shoulder pain
+Joint pain
 Hard to breath
+Heart hurts
+Head ache
+Muscle pain
+Emotional pain
+Infected wound
+Skin issue
+Acne
+Open wound
